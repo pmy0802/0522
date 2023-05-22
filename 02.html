@@ -7,16 +7,22 @@
     <title>Document</title>
     <script>
         var out = "";
-        function textTest(){
-            for(var i=0; i<10; i++){
-                out += "<h1>Header - "+ i +"</h1>";
+        function divTest(){
+            for(var i=0; i<256; i++){
+                out += "<div></div>";
             }
+            document.body.innerHTML = out;
 
-            document.body.textContent = out;
+            var divArr = document.querySelectorAll("div");
+            for(var i = 0; i < divArr.length; i++){
+                var div = divArr[i];
+                div.style.height = "2px";
+                div.style.backgroundColor = "rgb( "+(255-i)+", "+(255-i)+", "+i+")";
+            }
         }
     </script>
 </head>
-<body onload="textTest()">
+<body onload="divTest()">
     
 </body>
 </html>
