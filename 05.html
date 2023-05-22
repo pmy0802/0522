@@ -11,16 +11,17 @@
             hEl = document.getElementById("clock");
             //setInterval(printClock(), 1000)
             //익명함수일때만 1초간격으로 호출됨
-            setInterval(function (){
-                var now = new Date();
-                hEl.innerHTML = now.toString();
-            }, 1000);
+            // setInterval(function (){
+            //     var now = new Date();
+            //     hEl.innerHTML = now.toString();
+            // }, 1000);
+            setInterval(printClock, 1000)
         }
 
-        // function printClock(){
-        //     var now = new Date();
-        //     hEl.innerHTML = now.toString();
-        // }
+        function printClock(){
+             var now = new Date();
+             hEl.innerHTML = now.toString();
+        }
     </script>
 </head>
 <body onload="nowClock()">
